@@ -40,15 +40,15 @@ def askGpt(prompt, apikey):
 def main():
     st.set_page_config(page_title='AI 요약 프로그램')
     #매번 api_key를 입력받으면 짜증내니까.. st.session_state에 저장
-    if "OPENAI_API" not in st.session_state:
-        st.session_state['OPENAI_API']= ' '
+    if "OPENAI_API_KEY" not in st.session_state:
+        st.session_state['OPENAI_API_KEY']= ' '
 
     #사이드 바
     with st.sidebar:
         openai_apikey= st.text_input(label='OPENAI API 키', placeholder='openai api' 플랫폼에서 발급한 API를 입력하세요.)
         #사용자가 입력한 키를 session_state에 저장
         if openai_apikey:
-            st.session_state['OPENAI API']= openai_apikey
+            st.session_state['OPENAI API_KEY']= openai_apikey
 
         st.markdown('------')#구분선
 
